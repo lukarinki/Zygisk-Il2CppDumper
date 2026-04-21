@@ -19,7 +19,7 @@
 
 void hack_start(const char *game_data_dir) {
     bool load = false;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 60; i++) {
         // Ganti "libil2cpp.so" jadi "liblogic.so"
         void *handle = xdl_open("liblogic.so", 0); 
         if (handle) {
