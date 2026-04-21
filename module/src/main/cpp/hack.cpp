@@ -20,7 +20,8 @@
 void hack_start(const char *game_data_dir) {
     bool load = false;
     for (int i = 0; i < 10; i++) {
-        void *handle = xdl_open("libil2cpp.so", 0);
+        // Ganti "libil2cpp.so" jadi "liblogic.so"
+        void *handle = xdl_open("liblogic.so", 0); 
         if (handle) {
             load = true;
             il2cpp_api_init(handle);
@@ -31,7 +32,8 @@ void hack_start(const char *game_data_dir) {
         }
     }
     if (!load) {
-        LOGI("libil2cpp.so not found in thread %d", gettid());
+        // Update juga log-nya biar lo nggak bingung pas baca logcat
+        LOGI("liblogic.so not found in thread %d", gettid());
     }
 }
 
